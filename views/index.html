@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title>Tekniktest</title>
+        <link rel="stylesheet" href="assets/css/app.css">
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap-datetimepicker.min.css">
+    </head>
+    <body>
+		<div class="container-fluid">
+			<div class="page-header">
+				<h3>Add new program</h3>
+			</div>
+			<form class="form-horizontal row" role="form" data-bind="submit: addProgram">
+				<div class="alert alert-warning" role="alert" data-bind="visible: formShowInvalidMessage">
+					<strong>You have form errors!</strong> Please correct them and try again.
+				</div>
+				<div class="col-sm-5">	
+					<div class="form-group">
+					    <label for="inputName" class="col-sm-4 control-label">Name</label>
+					    <div class="col-sm-8">
+							<input type="text" class="form-control" name="name" id="inputName" placeholder="Name">
+					    </div>
+					</div>
+				  	<div class="form-group">
+					    <label for="inputDate" class="col-sm-4 control-label">Date</label>
+					    <div class="col-sm-8" id="datetimepicker">
+					      <input type="text" class="form-control" name="date" id="inputDate" placeholder="Date">
+					    </div>
+				  	</div>
+				  	<div class="form-group">
+					    <label for="inputStartTime" class="col-sm-4 control-label">Start time</label>
+					    <div class="col-sm-8" id="timepicker">
+					      <input type="text" class="form-control" name="startTime" id="inputStartTime" placeholder="Start time">
+					    </div>
+				  	</div>
+					<div class="form-group">
+				    	<label for="inputLeadtext" class="col-sm-4 control-label">Leadtext</label>
+				    	<div class="col-sm-8">
+				      		<textarea type="text" class="form-control" name="leadtext" id="inputLeadtext" placeholder="Leadtext"></textarea> 
+						</div>
+				  	</div>
+				</div>
+				<div class="col-sm-5">
+				  	<div class="form-group">
+				    	<label for="inputBline" class="col-sm-4 control-label">B-line</label>
+				    	<div class="col-sm-8">
+				      		<textarea class="form-control" id="inputBline" name="bLine" placeholder="B-line"></textarea>
+						</div>
+				  	</div>
+					<div class="form-group">
+				    	<label for="inputSynopsis" class="col-sm-4 control-label">Synopsis</label>
+				    	<div class="col-sm-8">
+				      		<textarea class="form-control" id="inputSynopsis" name="synopsis" placeholder="Synopsis"></textarea>
+						</div>
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="inputURL" class="col-sm-4 control-label">URL</label>
+				    	<div class="col-sm-8">
+				      		<input type="text" class="form-control" name="url" id="inputURL" placeholder="URL">
+						</div>
+				  	</div>
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+						  <button type="submit" class="btn btn-primary">Add new program</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+			<div class="page-header">
+				<h3>List of programs</h3>
+				<a href="programs.xml">View list as xml</a>
+			</div>
+			<table class="table table-striped table-condensed">
+			    <thead>
+			        <tr>
+			        	<th>Name</th>
+			        	<th>Date</th>
+			        	<th>Start time</th>
+			        	<th>Leadtext</th>
+			        	<th>B-line</th>
+			        	<th>Synopsis</th>
+						<th>URL</th>
+						<th></th>
+			        </tr>
+			    </thead>
+			    <tbody data-bind="foreach: program">
+			        <tr>
+			            <td data-bind="text: name"></td>
+			            <td data-bind="text: date"></td>
+			            <td data-bind="text: startTime"></td>
+			            <td data-bind="text: leadtext"></td>
+			            <td data-bind="text: bLine"></td>
+			            <td data-bind="text: synopsis"></td>
+			            <td data-bind="text: url"></td>
+			            <td>
+			            	<button data-bind="click: $parent.removeProgram"class="btn btn-danger">Delete</button>
+			            </td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+		<script src="assets/js/vendor/moment-2.8.1.js"></script>
+		<script src="assets/js/vendor/lo-dash-2.4.1.min.js"></script>
+        <script src="assets/js/vendor/jquery-2.1.1.min.js"></script>
+		<script src="assets/js/vendor/knockout-3.1.0.min.js"></script>
+		<script src="assets/js/vendor/bootstrap.min.js"></script>
+		<script src="assets/js/vendor/bootbox.min.js"></script>
+		<script src="assets/js/vendor/bootstrap-datetimepicker.min.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>

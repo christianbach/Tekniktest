@@ -1,0 +1,13 @@
+<programs>
+{% for program in data %}
+	<program>
+		<date>{{ program.date }}</date>
+		<start_time>{{ program.start_time }}</start_time>
+		<leadtext>{{ program.leadtext }}</leadtext>
+		<name>{{ program.name }}</name>
+		<b-line>{{ program['b-line'] }}</b-line>
+		<synopsis>{{ program.synopsis }}</synopsis>
+		<url>{{ program.url }}</url>
+	</program>    
+{% endfor %}
+</programs>
