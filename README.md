@@ -18,6 +18,6 @@ If you would like to restore the db just run restore_db.sh in the script folder.
 
 ## Remarks
 
-* Only tested in Chrome
+* Only tested in Chrome and OSX
 * No server side validation
 * No update methods
